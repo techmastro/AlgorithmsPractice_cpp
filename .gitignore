@@ -3,6 +3,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+
 # User-specific files
 *.rsuser
 *.suo
@@ -29,6 +30,7 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
+[Oo]ut/
 [Ll]og/
 [Ll]ogs/
 
@@ -374,6 +376,7 @@ MigrationBackup/
 .ionide/
 
 # Fody - auto-generated XML schema
+
 FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
@@ -396,3 +399,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+FodyWeavers.xsd
+
