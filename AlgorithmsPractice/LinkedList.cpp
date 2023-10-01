@@ -12,6 +12,10 @@ public:
 		this->name = name; this->id = id;
 		next = NULL; previous = NULL;
 	}
+
+	void print() {
+		cout << "|" << previous << "|" << "  (" << id << "," << name << ")  " << "|" << next << "|";
+	}
 };
 
 class LinkedList {
@@ -58,42 +62,42 @@ public:
 		Node* temp;
 		temp = head->next;
 		if (size == 0) {
-			cout << "\nEmpty List";
+			cout << "Empty List";
 			return;
 		}
-		cout << "\n<-";
+		cout << "|| Front || <-- ";
 		while (temp != tail) {
-			cout << "(" << temp->name << "," << temp->id << ")";
+			cout << "(" << temp->id << "," << temp->name << ")";
 			if (temp->next != tail)
-				cout << "--";
+				cout << " < ";
 			else
-				cout << "<-";
+				cout << " <-- || Back ||";
 			temp = temp->next;
 		}
+		cout << "";
 	}
 
 };
 
 void linkedList_Main()
 {
-	cout << "Linkedlist Example\n";
-	LinkedList queue;
-	cout << "\nUse as a queue, Adding ABC & DEF";
-	queue.addFromBack(new Node("ABC", 1));
-	queue.addFromBack(new Node("DEF", 2));
-	queue.print();
-	cout << "\nRemoving DEF";
-	queue.removeFromFront();
-	queue.print();
+	LinkedList list;
+	cout << "Use as a queue, Adding ABC, DEF & GHI: \n";
+	list.addFromBack(new Node("ABC", 1));
+	list.addFromBack(new Node("DEF", 2));
+	list.addFromBack(new Node("GHI", 3));
+	list.print();
+	cout << "\n\nRemoved from front: ";
+	Node* recieved = list.removeFromFront();
+	recieved->print(); cout << "\n";
+	list.print();
 
-	LinkedList stack;
-	cout << "\nUse as a stack, Adding AAA & BBB";
-	stack.addFromBack(new Node("AAA", 1));
-	stack.addFromBack(new Node("BBB", 2));
-	stack.print();
-	cout << "\nRemoving BBB";
-	Node* t = stack.removeFromBack();
-	cout << endl << t->name << " removed";
-	//stack.addFromFront(new Node("xxx", 3));
-	stack.print();
+	cout << "\n\nUse as a stack, Adding AAA & BBB from back: \n";
+	list.addFromBack(new Node("AAA", 4));
+	list.addFromBack(new Node("BBB", 5));
+	list.print();
+	cout << "\n\nRemoving from back: ";
+	recieved = list.removeFromBack();
+	recieved->print(); cout << "\n";
+	list.print();
 }
