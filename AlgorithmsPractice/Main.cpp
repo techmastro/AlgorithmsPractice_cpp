@@ -1,8 +1,9 @@
 #include <iostream>
-#include "LinkedList.cpp"
-#include "Sort.cpp"
-void linkedList_Main();
-void bubbleSort_Main();
+//#include "LinkedList.cpp"
+//#include "Sort.cpp"
+extern void insertionSort_Main();
+extern void bubbleSort_Main();
+extern void linkedList_Main();
 using namespace std;
 
 int main() {
